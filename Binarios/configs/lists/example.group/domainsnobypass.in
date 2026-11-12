@@ -1,0 +1,63 @@
+# User are not allowed to bypass domains in this list
+
+#Don't bother with the www. or the http://
+
+#NOTE: Sites using just IP should be put into bannedsiteiplistwithbypass
+
+#You can include
+#.tld so for example you can match .gov for example
+
+#.Include<@E2CONFDIR@/anotherbannedurllist>
+
+#You can have multiple .Includes.
+
+# WARNING: Old style Blanket blocks in this file will be silently ignored
+
+
+# .Include<@E2CONFDIR@/lists/blacklists/ads/domains>
+
+#Remove the # from the following and edit as needed to use a stock
+#squidGuard/urlblacklists collection.
+#.Include<@E2CONFDIR@/lists/blacklists/adult/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/aggressive/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/artnudes/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/audio-video/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/beerliquorinfo/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/beerliquorsale/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/chat/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/childcare/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/clothing/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/culinary/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/dialers/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/drugs/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/entertainment/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/forums/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/frencheducation/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/gambling/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/government/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/hacking/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/homerepair/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/hygiene/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/jewelry/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/jobsearch/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/kidstimewasting/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/mail/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/news/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/onlineauctions/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/onlinegames/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/onlinepayment/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/personalfinance/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/pets/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/porn/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/proxy/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/publicite/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/redirector/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/ringtones/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/sportnews/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/sports/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/vacation/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/violence/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/virusinfected/domains>
+#.Include<@E2CONFDIR@/lists/blacklists/warez/domains>
+
+# You will need to edit to add and remove categories you want

@@ -1,0 +1,123 @@
+# e2guardian 3 messages file in Spanish
+# Translated by Roberto Quiroga, adapted for Unicode by Peter Vollmar
+# Translated by Leonardo Yanes Batista
+"0","Número de mensaje ausente"
+"1","Acceso Denegado"
+"10","IP limit exceeded.  There is a  "    # needs translation
+"11"," Límite de IP establecido."
+"50"," en "
+"51","TRUSTED"    # needs translation
+"52","DENIED"    # needs translation
+"53","INFECTED"    # needs translation
+"54","SCANNED"    # needs translation
+"55","CONTENTMOD"    # needs translation
+"56","URLMOD"    # needs translation
+"57","HEADERMOD"    # needs translation
+"58","HEADERADD"    # needs translation
+"59","NETERROR"    # needs translation
+"60","SEMI-TRUSTED"    # needs translation
+"70","SSL SITE"    # needs translation
+"71","IP Limit"    # needs translation
+"72","Analizando contenido"
+"100","Su dirección IP no está autorizada a visitar: "
+"101","Su dirección IP no está autorizada a navegar."
+"102","El usuario no está autorizado a visitar: "
+"103","IP de cliente no permitida"
+"104","Ubicación no permitida"
+"105","Usuario no permitido"
+"110","Error de autenticación de proxy"
+"121","Solo se permite el acceso limitado desde su ubicación"
+"122","Usted no está autorizado a acceder a esta hora del día"
+"150","El certificado proporcionado por el servidor no era válido"
+"151","No se pudo abrir la conexión SSL"
+"152","No se pudo obtener el certificado SSL"
+"153","No se pudo cargar la clave privada SSL"
+"154","No se pudo negociar la conexión SSL con el cliente"
+"155","El servidor no proporcionó un certificado SSL"
+"156","El certificado SSL del servidor no coincide con el nombre de dominio"
+"157","No se puede crear un túnel a través del proxy local"
+"158","Error al abrir el túnel"
+"159","No se pudo conectar al servidor proxy"
+"160","No se pudo negociar la conexión SSL con el servidor"
+"200","La URL solicitada está mal formada."
+"201","No se pudo obtener respuesta del proxy superior (timeout)"
+"202","No se pudo obtener respuesta del proxy superior (error)"
+"203","El sitio solicitado no responde"
+"204","- Por favor, inténtelo de nuevo más tarde"
+"205","El proxy superior no responde (error de red)"
+"206","- Por favor, inténtelo de nuevo más tarde"
+"207","El sitio solicitado no existe"
+"208","El sitio solicitado no tiene una dirección IPv4"
+"209","Fallo temporal del servicio DNS - inténtelo de nuevo"
+"210","Fallo del servicio DNS - inténtelo de nuevo más tarde"
+"212","Solicitud de bucle bloqueada"
+"300","Se encontró la frase no permitida: "
+"301","Se encontró una frase no permitida."
+"400","Combinación de frases no permitida: "
+"401","Combinación de frases no permitida."
+"402","Límite de ponderación de frases de "
+"403","Límite de ponderación de frases excedido"
+"450","Se encontró un término de búsqueda prohibido: "
+"451","Se encontró un término de búsqueda prohibido."
+"452","Se encontró un término de búsqueda combinado prohibido: "
+"453","Se encontró un término de búsqueda combinado prohibido."
+"454","Límite de término de búsqueda ponderado de "
+"455","Se superó el límite de términos de búsqueda ponderado."
+"456","Exception combination search term found: "    # needs translation
+"457","Exception search term found: "    # needs translation
+"500","Sitio no permitido: "
+"501","URL no permitida: "
+"502","Bloqueo general de IP está activo y el sitio deseado no está en la lista de IPs permitidas."
+"503","URL bloqueada por expresión regular: "
+"504","URL bloqueada por expresión regular."
+"505","Bloqueo general de IP está activo y la dirección deseada consiste únicamente en IP."
+"506","El acceso mediante HTTPS solo está permitido a sitios de confianza."
+"507","No se permite el acceso HTTPS mediante direcciones IP."
+"508","No se permite el acceso mediante este navegador (o aplicación): "
+"509","No se permite el acceso mediante este navegador (o aplicación)."
+"510","El sitio IP se encuentra bloqueado "
+"511","La conexión https transparente no es TLS: "
+"512","La conexión https transparente no tiene SNI: "
+"520","Sitio HTTPS bloqueado: "
+"521","Palabras de búsqueda prohibidas: "
+"522","Navegador bloqueado: "
+"560","Sitio bloqueado (local): "
+"561","URL bloqueada (local): "
+"580","Sitio HTTPS bloqueado (local): "
+"581","Palabras de búsqueda prohibidas (local): "
+"600","Dirección IP del cliente presente en la lista de excepciones."
+"601","Usuario presente en la lista de excepciones."
+"602","Sitio presente en la lista de excepciones."
+"603","URL presente en la lista de excepciones."
+"604","Frase presente en la lista de excepciones."
+"605","Combinación de frases presente en la lista de excepciones: "
+"606","Puente URL en la lista de excepciones."
+"607","Puente cookie en la lista de excepciones."
+"608","Scan bypass URL exception."
+"609","Exception regular expression URL match: "
+"610","User-Agent pattern match: "    # needs translation
+"620","Referer match: "    # needs translation
+"630","URL coincide en: "
+"631"," location allow list"    # needs translation
+"632","Location overide allow list matched"    # needs translation
+"662","Sitio (local)."
+"663","URL (local)."
+"700","La subida está bloqueada."
+"701","Límite de subida excedido."
+"750","Blanket file download is active and this MIME type is not on the white list: "    # needs translation
+"751","Blanket file download is active and this file is not matched by the white lists."    # needs translation
+"752","Site has a TLD that is not allowed by default"    # needs translation
+"800","Clase MIME bloqueada: "
+"900","Extensión bloqueada: "
+"1000","Clasificación PICS excedida en el sitio indicado."
+"1100","Virus o mal contenido detectado."
+"1101","Anuncio bloqueado"
+"1200","Espere, descargando para ser analizado..."
+"1201","Advertencia: archivo demasiado grande para analizar. Si sospecha que este archivo es mayor que "
+"1202",", luego actualice esta página para descargar directamente."
+"1203","ADVERTENCIA: ¡No se pudo realizar el análisis de contenido!"
+"1210","Descarga completada.  Comenzando el análisis..."
+"1220","Análisis completado.</p><p>Haga click aquí para descargar: "
+"1221","Descarga completa; el archivo no se ha analizado.</p><p>Haga click aquí para descargar: "
+"1222","Archivo demasiado grande para almacenar en caché.</p><p>Haga clic aquí para volver a descargar, sin pasar por el análisis de contenido :"
+"1230","El archivo ya no está disponible"

@@ -1,0 +1,37 @@
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH 
+
+variables:
+  CONTAINER_CLIENT_IMAGE: amd64/debian:13-slim    
+
+stages:
+- quality 
+- build-debian
+- create-package-debian
+- test-publish-debian
+- build
+- create-package
+- test-publish
+- Docker-hub-build
+- Docker-hub-test
+- Docker-hub-pushtag
+- Docker-hub-build-arm
+- Docker-hub-test-arm
+- Docker-hub-pushtag-arm
+
+hadolint:
+  image: hadolint/hadolint:latest-debian
+  resource_group: builddeb
+  stage: quality
+  before_script:
+    - cd $CI_PROJECT_DIR 
+  script:
+    - hadolint --ignore DL3008 gitlabci/docker-ci/Dockerfile 
+
+include:
+  - 'gitlabci/debianlatest.yml'
+  - 'gitlabci/docker-hub-arm.yml'
+  - 'gitlabci/docker-hub.yml'
+  - 'gitlabci/ubuntulatest.yml'
+  - 'gitlabci/armdebian.yml'

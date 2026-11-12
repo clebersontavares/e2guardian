@@ -1,0 +1,49 @@
+.\" ------> /usr/share/man/man8/e2guardian.8.gz <------
+.\"
+.TH "e2guardian" "8" "July 2025" "Philip Pearce" "e2guardian"
+.SH "NAME"
+e2guardian \- web content filter
+
+.SH "SYNOPSIS"
+.PP
+\fBe2guardian\fR [ \-\fBc\fR \fIconfig\-file\fR ] [ \-\fBv\fR ] [ \-\fBh\fR ] [ \-\fBN\fR ] [ \-\fBq\fR ] [ \-\fBQ\fR ] [ \-\fBs\fR ] [ \-\fBr\fR ] [ \-\fBg\fR ] [ \-\fBt\fR ]  [ \-\fBd\fR \fIdebuglevel\fR ]  [ \-\fBi\fR ]
+.TP
+\-c \fIconfig\-file\fR
+Use the given \fIconfig\-file\fR\&.
+.TP
+\-v
+gives the version number and build options\&.
+.TP
+\-h
+Output a short summary of available command line options\&.
+.TP
+\-N
+Do not go into the background\&.
+.TP
+\-q
+causes e2guardian to kill any running copy\&.
+.TP
+\-Q
+kill any running copy AND start a new one with current options\&.
+.TP
+\-s
+shows the parent process PID and exits\&.
+.TP
+\-r
+ reloads lists and group config files by issuing a HUP, but this does not reset the httpworkers option (amongst others)\&.
+.TP
+\-g
+ same as -r\&.
+.TP
+\-t
+ rotate logs (Issues a USR1)\&.
+.TP
+\-d
+ allows you to specify a debuglevel\&.
+.TP
+\-i
+ read lists from stdin\&.
+.SH "COPYRIGHT"
+
+e2guardian is copyright Philip Pearce and Frederic Bourgeois
+

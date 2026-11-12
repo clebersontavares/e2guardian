@@ -1,0 +1,438 @@
+About "Bug" tags show "https://github.com/e2guardian/e2guardian/issues?q=is%3Aissue+is%3Aclosed" 
+
+version 5.5.9r
+
+April 2025 to August 2025
+
+    License change and documentation tidy up.
+
+    Gitlab - Update expire artifacts
+    Gitlab - Reduce simultaneous compilation
+
+    Fix #845 correct auto-gen start/end cert dates to use UCT.
+    Fix #844 Authority Key Identifier now generated for server certificate
+
+version 5.5.8r
+
+December 2024 to April 2025
+
+    Fix bug #841 - generated cert dates validaition produces 1970 end date with CA root notAfterDate greater than 2k38.
+    
+    Fix dive arm
+    Fix dive x86
+
+    Add corrected 100 continue logic
+
+    Fix issue #838 - proxyport listed twice in e2guardian.conf.in
+
+version 5.5.7r
+
+July 2024 to December 2024
+
+    Auto dates for cert generation feature added
+    Add chatgpt ChatGPT Analysis to v5.5
+    Fix bug #831 Minimum SNI record length is 7 (not 8)
+    Remove compilation cache
+    Further work on #827 - oversize domain names now ignored
+    Further bound checks added (relates to #827)
+    Possible fix for #827 - Intermitant crash withj transparent https
+    Fix ssl memleak and out of range access detected by valgrind
+    Fix access to unintialised memory found by valgrind memcheck
+    Fix arm compilation
+
+version 5.5.6r
+
+May 2024 to June 2024
+
+    Add addECHtoFlags option for monitoring purposes
+    Rewrite of SNI extraction code and addition of checkme.hasECH variable
+    Fix for #810 - intermitant garbled SNI extraction with THTTPS
+    Fix #816 - unused variable in trickle.cpp
+    Fix #817 RegExp::match() issue
+    Fix #819 ICAP send time-out but does not close connection
+    Impliment #818 multiple domains/ips in tlsproxycn
+    Update expire artifacts ttl
+    Update armdebian.yml
+    Update debianlatest.yml
+    Update ubuntujammy.yml
+    Fix #815 - Change to invoke pthreads_sigmask before creating any threads to
+    fix occational issue of logging stopping
+    Fix #814 adjustments for LibreSSL and bug fix DEBUG_debug call.
+    Add -funsigned-char to CXXFLAGS to ensure char is unsigned
+       If this is not set causes stack and other issues in some platforms.
+    More robust regular expressions in bannedregexpurl list
+
+version 5.5.5r
+
+September 2023 to April 2024
+
+    Fix #809 Reading <include> files not respecting abortiflistmissing = off settina
+      Also improve list error reporting to show list files and configuration files
+      that have failing <include> files under their tree.
+    Fix #807  __CONFFILE defined twice
+
+    Change default generatedcertstart to 1st Apr 2024
+    Change method of generating Certificate serial numbers #631
+    
+      When generating Serial numbers from host names a hash of the rootCA,
+      start_date and end_date is added to the CN and hashed to produce a unique serial
+      number.  This means that the serial number for a host will change if
+      the rootCA or start/end date is changed.  This will force a re-generation
+      of the certificate.
+    
+      The generated cert store should be cleared to remove the now stale
+      certificates previously generated.
+
+    Fix openssl dependency in configure - issue #806
+    Fix for bug #804 - Logger build error
+    Merge pull request #796 from sunweaver/pr/typo-fixes-5.5
+       NEWIN_{v4,v5},configs/e2guardian*.conf.in}: Various typo fixes.
+    Fix issue #799 - write PID file in parent process rather than deomon child
+    Merge pull request #795 from sunweaver/pr/maxcontentramcachesize-regression-v5.4-v5.5
+    {configs/e2guardian.conf.in,src/OptionContainer.cpp}: Make sure values of maxcontentfiltersize 
+       and maxcontentramcachesize obey to the requirements in the (inline) documentation.
+    Fix for #794 - Bad headers in whatsapp requestsi cause crash
+    Upgrade to Debian12 in CI/CD
+    Fix #792 - dstat output buffer may be too small - buffer size increased to 200
+    Fix #790  - error in lists/common/Makefile.am
+    Add ICAP client notes
+    Update example config files documentation
+    Fix #788 Rest of header not being output when keep-alive triggered
+    Fix #786 - request log not writing
+    Move debuglevel to be read earlier - so that log settings can be debuged
+    Fix #785 BYPASS not working in v5.5 also bypass log messages
+    Fix #783 - command line option -N being ignored
+    Add Spanish translation for message: 122
+
+version 5.5.4r
+
+August 2023
+
+  Fix possible XSS in bypass url - issue #782
+  Correct INSTALL file - issue #781
+  Fix bug #780 - e2g crashes if invalid group name is provided via BearerBasic
+      auth plugin
+  Update Italian messages - pull request #778 from albanobattistella
+  Update Italian block templalte.html
+
+version 5.5.3r
+
+March to May 2023
+
+    Fix #773 - when blocking match is on an individual IP, match is 
+       returned blank.
+    Add binary IP search to rooms feature
+    Merge pull request #772 from Arjow/v5.5
+       fixing error with uint32_t
+    Convert iprange and iprangemap lists to binary sort/search, remove 
+       ip mask lists, convert IP subnet and CIDR to internal rangelist.
+    Fix #770 - only write blocked url to alert.log
+    Fix #768 - findInList() (and other search functions) may return 
+       illegal address
+    Add rsync to docker image
+    Amend template config file to add missing set_storytrace and cover 
+       issues raised in #761
+    Comment out debug lines and tidy Logger code
+       Based on pull request #763 by KDGundermann
+    Add missing E2LOGGER_warning macro
+    Tidy storyboardtrace logic in OptionContainer
+    Fix #761 - dockermode settings for access.log overwritten when 
+       set_accesslog and loglocation missing from config file
+    Minor changes to e2guardian.cpp to clarify DEBUG_LOW usage
+    Fix #762 Inconsistent references to downloadmanagers
+
+February 2023
+
+Fixes
+    #759 Segmentation fault - Corrupted TEMPLATE returns  
+    Possible Fix for #760
+
+version 5.5.2
+
+July 2022 to February 2023
+
+Fixes
+    Amend Spanish translations
+    Fix bug #756 extension checking requires removal of cgi from url
+    Correct HOWTO_Logger.md
+    Re-add google translate site/url checking (translate.goog)
+    Merge pull request #748 from meyertime/v5.5buildfix
+       Fix build error AM_INIT_AUTOMAKE expanded multiple times
+    List definition option anonlog now only blanks URL
+    Fix bug #743 - logfileformat defaulting to 1 instead of 8 as documented
+    Comment out fancy and trickle download managers as these are not
+       supported in v5.5
+    Obsolete define terms removed from code and clean-up and autoupdate of
+       configure.ac
+    Partial work towards issue #731
+    Fix obscure bug with some lists - replace sort() with stable_sort()
+       and improve memory handling for lists
+    Fix bug #730 - large downloads in chunked format not completing
+
+New features
+    UDP logging option added (based on code/idea by KDG)
+    Add SEMI-TRUSTED flag to logs
+    Add kiddle search terms extractor #739 refers
+    Add storyboarding, list definitions, message for TLD allowed
+       as suggested by Dalacor #733.
+       Note I have used allowedtldlist rather than exceptiontld.  Exceptions
+       generally override everything but this list is used in blanketblock and
+       so will be overridden by exception site urls etc.
+
+version 5.5.1
+
+September 2021 to June 2022
+
+Fixes
+    Update default values for connecttimeout & maxheaderslines
+    Fix #713 - raise upper limit to 2500 for maxheaderlines
+    Remove bionic (18.04) add jammy (22.04)
+    Fix bug #727 also added list test function self_check()
+    Fix bug in set_accesslog
+    Fix bug #720 - upper case search terms not blocked
+    Correct spelling in message 160
+    Fix bug #716 - proxyip being ignored
+    Major changes to socket and tunnel code to fix bug -
+       #714 - extra high CPU usage under high load
+    Fix bug #712 - message wrong when upstream connection fails
+
+New features
+    Add regexpreplacelist to available lists for refererin state (SB)
+    Mime type stop feature - to prevent scanning of non-relevant mime types.
+    Category lists - category can be checked against category list
+      - new list type categorylist added 
+      - new storyboard state categoryin
+    Response log option - when set logs all responses in separate log
+    Alert log - can be used by external process to email alerts/reports etc
+      - new storyboard flag alert 
+            - when set log in alertlog as well as accesslog
+      - new storyboard action setalert
+      - storyboard modified so that categories that match alertcategorylist
+          are logged in atert.log.
+
+
+December 2020 to August 2021
+
+Fixes
+  - fix #686 icap default filtergroup is not set.
+  - fix #679 ICAP protocol error
+  - fix #678 -N reloads instead of stops with -q
+  - fix #646 - data maplist of more than 16 lines crash e2g
+  - fix #649 - set got_orig_ip in get_origianl_ip_port (by Raifeg)
+  - Fix #660 - revert to use of iostream for log files - fixes delay due to buffer issue in logger
+  - Fix #670 - request log not being written
+  - Fix #672 - Cert error not giving status page
+  - Fix #677 - exceptionfile test in wrong place
+  - Fix #683 - ports ignored in authplugin conf files
+  - Fix #684 - crash when only one entry in a maplist
+  - Fix #685 - uppercase domain in username never matches
+  - Fix #687 - slowness on browsing some sites - issue with new duplex tunnelling
+
+New features
+  Add extracheckports option to allow loop checking when cache if front.
+  Add new semi exception lists and flag - allows reverse logic for selected sites
+     i.e. Trust a site - but block some urls within site.
+     Note: semiexceptionsitelist and blockurllist must be of the same type to work
+        so if site is in localsemiexceptionsitelist then block of url will only work if in localblockurllist
+        or if in semiexceptionsitelist the block of url will only work if in blockurllist
+  Add timestamp to debug logs, but not to syslog entries
+
+Refactoring
+  OptionContainer variables reorganised (by KDGundermann)
+
+version 5.5.0
+
+October to November 2020
+  Bug-fixes to new IO
+  Secure TLS proxy added
+
+March to September 2020
+
+New features
+  Log rotation
+  New Logger/Debug integrated from coding by KDGundermann 
+  IO (normal and MITM ssl) rewritten
+	- timeouts now honored when in MITM mode
+  Removal of support for pre v1.1 OpenSSL versions
+  Much code tidying
+
+version 5.4.2
+
+April to August 2020
+
+Fixes
+  - Fix #619 When using x-forwarded-IP behind proxy MITM requests show wrong IP
+  - Fix #616 IP auth issue in ICAP mode
+  - Fix #609 .Include not working in e2guardian.conf
+  - Fix #607  Merge pull request #608 from KDGundermann 
+              wrong file path for example
+  - Remove example .Includes for phraselists that are no longer in distribution
+  - Fix #602 - log timestamp records time log written
+  - Fix #520 - by-pass cookie generation and check does not match
+
+New features
+  Add 'hook' calls and placeholder functions to common.story
+  Add pf-basic auth plugin - use when squid in front of e2g #620
+  Reorganize lists and example config files (#618) 
+  Feature .Define LISTDIR <> and __LISTDIR__ insertion added #610
+
+version 5.4.1
+
+August 2019 to April 2020
+
+Fixes
+ - Fix #469 - remove punctuation from within phraselists when read in
+ - Fix #493 - refererexception not working
+ - Fix #549 - wrong url in CGI block and bypass
+ - Fix #555 - improved embeded url detection
+ - Fix #565 - segfault when no write permission on generated certs directory
+ - Fix #585 - Bypass not working with mitm https 
+ - Fix #590 - Storyboard parsing failing with trailing comments
+ - Fix #595 - MITM - block page not delivered when connection to site fails
+
+New features
+ - Add Server Name to Block Page #560
+ - Auth list files moved into storyboard system - fixes #458
+ - Improve auth plugin logic - add per-plugin default group options
+ - On single list reading failure do not abort but check rest of config
+ - Tidy up request log output
+ - New usedashforblank option for logs
+ - Extended logs added (type 7 & 8) and -EXTFLAGS- added to block page params
+ - Add searchterms field to log types 7,8 - new logclientnameandip config flag
+ - Make consistant punctuation removal in NaughtyFilter
+ - Time based list and storyboard functions added - #529
+ - SB: Add timed blanket block
+ - SB: Add support for log-only function (logcategory flag)
+ - SB: Response HTTP header modification added & listenportin state added
+ - SB: Add #568 feature - give warning when defined list is not used
+ - New useoriginalip option - solves issues with some apps who use non-stqndard SNI.
+ - nomitm lists added for sites which refuse to be mitm.
+ - nolog lists added and actioned via new SB entry point - for clearer logs
+ - searchexception list added to override searchregexplist - so search complete
+   calls are not treated as a user search and give misleading denies on logs
+ 
+
+Config changes
+ - Remove safelabel from bannedphraselist - does not appears to have been adopted on web
+ - Revised Phraselists added - #264 refers
+ - Phraselist tree now has language as top level
+ - Switch dstats on by default in config
+ - Update httpworkers comments re 32-bit systems
+ - All auth config files have changed - check sample configs
+ - Revised/new flags in e2guardian.conf
+
+Definitions/Variables
+ - DG replaced by E2 in all directive and configure variables 
+   e.g. DGDEBUG is now E2DEBUG etc.
+
+version 5.3.4
+
+January 2020
+
+- Increase example maxcontentcachesize to make filtering youtube work
+- Fix #565 segfault when no write permission on generated certs directory 
+- Fix #493 referexception not working
+- Fix #549 - Url in CGI and bypass wrong in MITM 
+- Bug fix sigwait code for OpenBSD
+- Amend example bannedregexpulrlist
+- Fix #554 Override Search Terms not overriding weighted search term check
+- Add request log option for diagnostics - see notes/LogRequests
+
+and more ...
+
+
+Version 5.3.3
+
+July 2019
+
+- Memory not released when startSslServer returns error #542
+
+June 2019
+
+- IE10/11 on Win7 reports 408/9 error on some sites #538
+
+May 2019
+
+- Fix segfault when corrupt SNI presented
+
+April 2019
+
+- Fix bug #532 - reverse IP lookup give random chars in log and segfaults
+- Update comments in list files - as per issue #530
+- Add support for reading openssl config files - new optional 
+  e2guardian.conf params useopensslconf and opensslconffile
+- Fix bug #527 - memory leaking when complied with openssl v1.1
+- Loop detect code added - enhancement #523 - 
+  Note that to activate loop detect 'checkip' lines need to be added to 
+  e2guardian.conf, one for each ip the e2guardian system is listening on, 
+  including loopback and any VIP used.
+
+March 2019
+
+- Fix #512
+- Fix segfault bug #509 
+
+Version 5.3.2
+
+March 2019
+
+- SSLMITM source code clean-up - no logic or call changes
+- Fix bug #514 - useragentin
+- Fix ICAP error (with SSL denied) introduced in 5.3.1
+
+Version 5.3.1
+
+January 2019
+
+- Fix bug with Firefox and SSL denied web sites (connection still opened, massive performance issue)
+- Update ICAP client (tested with drweb AV)
+- Add stealth mode (reporting without block) to StoryBoard mode
+- Add new secure bypass mode (experimental)
+- Better handling for non-tls and non-sni calls on transparent https
+- Fix bug #490 modified URL not shown in log 
+- Fix bug #489 - exception file ext/mime type not working correctly 
+- Fix bug #486 - bypass cookie not being set in proxy mode 
+
+December 2018
+
+- Fix for #485 related to #481 wrong upstream site called in direct mode 
+- Fix bug #481 auth exception being denied 
+- Fix bug #480 Ignore http 100 when no expect: 100-continue 
+- Fix bug #478 check searchterms always being called 
+- Fix bug #476 - only check when potential url is longer than 3 chars and contains'.'
+- Fix bug #464 proxy auth issues
+- Fix bug #475 Client Hostname blank in template 
+- Fix bug #473 ICAP mode: Wrong group in respmod 
+- Fix bug #465 Incorrect wildcard certificate validation 
+
+and more ...
+
+Version 5.2.2
+
+September 2018
+- Reenable content regexp option 
+- Allow the ip authplugin to use the X-Client-IP header when using ICAP
+- Fix bug #432 Block html page gets shown twice
+- Fix bug #436 compilation bug with avast and kavscan
+- Fix some lags with debugmanager
+- Allow the ip authplugin to use the X-Client-IP header when using ICAP
+- Update default template page (denied access)
+
+and more ...
+
+August 2018
+- Add new per cent option of weighted phrase lists
+- Global code review (remove gcc warnings)
+
+July 2018
+- Fix ICAP client - tested with f-secure and Kav4proxy -
+- Fix bug #417 urlredirectregexplist doesn't work
+- Fix bug #418 NTLM auth is not working 
+- Fix bug #410 segfault if "neterrtemplate=" doesn't exist in config
+- Fix bug #414 compiler error caused by extra brace
+
+Summary of changes in this release (v5.2) can be found in e2guardian.release
+and notes/NEWIN_v5
+
+Changes to E2guardian 4.x.x can be found in ChangeLog4.x
+Changes to E2guardian 3.x.x can be found in ChangeLog3.x

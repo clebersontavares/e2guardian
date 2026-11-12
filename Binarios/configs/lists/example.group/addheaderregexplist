@@ -1,0 +1,13 @@
+#Add header where url matches
+#
+## to enable restricted YouTube 
+#"(^https?://www\.youtube\.com/.*$)"->"YouTube-Restrict: Strict" 
+#"(^https?://m\.youtube\.com/.*$)"->"YouTube-Restrict: Strict" 
+#"(^https?://youtubei\.googleapis\.com/.*$)"->"YouTube-Restrict: Strict" 
+#"(^https?://youtube\.googleapis\.com/.*$)"->"YouTube-Restrict: Strict" 
+#"(^https?://www\.youtube-nocookie\.com/.*$)"->"YouTube-Restrict: Strict" 
+#"(^https?://www\.youtube\.com$)"->"YouTube-Restrict: Strict" 
+#"(^https?://m\.youtube\.com$)"->"YouTube-Restrict: Strict" 
+#"(^https?://youtubei\.googleapis\.com$)"->"YouTube-Restrict: Strict" 
+#"(^https?://youtube\.googleapis\.com$)"->"YouTube-Restrict: Strict" 
+#"(^https?://www\.youtube-nocookie\.com$)"->"YouTube-Restrict: Strict" 

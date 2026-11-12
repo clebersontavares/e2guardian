@@ -1,0 +1,51 @@
+variables:
+  CONTAINER_PROD_IMAGE: $HUB_REGISTRY_IMAGE:$CI_COMMIT_BRANCH-amd64
+  CONTAINER_BUILD_NOPROD_NAME_AMD64: $HUB_REGISTRY_IMAGE:build-noprod-amd64
+  
+docker-hub-build:
+  stage: Docker-hub-build
+  image: docker:dind
+  dependencies:
+    - package:debian
+  variables:
+    PACKDST: "$CI_PROJECT_DIR/scripts/debian_package/e2debian_package"
+    PROJECT_DIR: "$CI_PROJECT_DIR"
+  before_script:
+    - docker login -u "$DOCKER_HUB_USER" -p "$DOCKER_HUB_TOKEN" $DOCKER_HUB_REGISTRY
+  script:
+    - cd $PROJECT_DIR  
+    - docker build --build-arg E2_VERSION="$CI_COMMIT_BRANCH" --build-arg PROJECT_DIR="$PROJECT_DIR" -f gitlabci/docker-ci/Dockerfile --pull -t $CONTAINER_BUILD_NOPROD_NAME_AMD64 .
+    - docker push $CONTAINER_BUILD_NOPROD_NAME_AMD64
+
+docker-hub-test:
+  image: 
+    name: $CONTAINER_BUILD_NOPROD_NAME_AMD64
+    entrypoint: [""]
+  stage: Docker-hub-test
+  dependencies: []
+  script:
+    - e2guardian -N &
+    - sleep 5 && export https_proxy=http://localhost:8080 && curl -k https://www.google.fr
+
+dive:
+  image: 
+    name: wagoodman/dive:latest
+    entrypoint: [""]
+  dependencies: []
+  stage: Docker-hub-test
+  script:
+    - docker pull $CONTAINER_BUILD_NOPROD_NAME_AMD64
+    - dive $CONTAINER_BUILD_NOPROD_NAME_AMD64
+  variables:
+    CI: "true"
+
+push-docker-hub:
+  stage: Docker-hub-pushtag
+  image: docker:dind
+  dependencies: []
+  before_script:
+    - docker login -u "$DOCKER_HUB_USER" -p "$DOCKER_HUB_TOKEN" $DOCKER_HUB_REGISTRY
+  script:
+    - docker pull $CONTAINER_BUILD_NOPROD_NAME_AMD64
+    - docker tag $CONTAINER_BUILD_NOPROD_NAME_AMD64 $CONTAINER_PROD_IMAGE
+    - docker push $CONTAINER_PROD_IMAGE
