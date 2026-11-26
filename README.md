@@ -109,8 +109,7 @@ Para ativar a inspeção HTTPS ainda são necessários:
 8. política de exceções SSL;
 9. validação do runtime.
 
-No Block Manager, certificados e autoridades certificadoras gerados pelo instalador devem usar a identidade "Block Manager". Não utilizar "SystemWay" na identidade visível dos certificados.
-
+No Block Manager, certificados e autoridades certificadoras gerados pelo instalador devem usar a identidade "Block Manager".
 VALIDAÇÃO DO BINÁRIO
 --------------------
 
